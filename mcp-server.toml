@@ -1,0 +1,162 @@
+server_id = "mcp_pharmacy"
+display_name = "Pharmacy"
+version = "1.0.0"
+domain = "pharmacy"
+sdk_version = "0.1.0"
+risk_level = "low"
+writes_allowed = "none"
+transports = ["stdio"]
+credentials = []
+governance_gates = []
+environments = ["development", "staging", "production"]
+
+# ─── OpenFDA (4) ──────────────────────────────────────────────────────────────
+
+[[tools]]
+name = "openfda_search_labels"
+description = "Search US drug labels (package inserts) by generic name, brand name, or indication"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "openfda_get_adverse_events"
+description = "Search FDA Adverse Event Reporting System (FAERS) for a drug"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "openfda_search_recalls"
+description = "Search FDA drug recalls and enforcement actions"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "openfda_get_ndc"
+description = "Look up National Drug Code (NDC) directory entries for a drug"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+# ─── DailyMed (2) ─────────────────────────────────────────────────────────────
+
+[[tools]]
+name = "dailymed_search_labels"
+description = "Search DailyMed structured product labels (SPL) by drug name"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "dailymed_get_label_xml"
+description = "Retrieve full SPL XML label by setid for detailed section extraction"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+# ─── RxNorm (3) ───────────────────────────────────────────────────────────────
+
+[[tools]]
+name = "rxnorm_normalize"
+description = "Normalize a drug name to RxNorm RxCUI identifier"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "rxnorm_get_properties"
+description = "Get drug properties (name, term type, status) by RxCUI"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "rxnorm_get_atc_classes"
+description = "Get WHO ATC classification codes for a drug via RxCUI"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+# ─── PubChem (2) ──────────────────────────────────────────────────────────────
+
+[[tools]]
+name = "pubchem_search_compound"
+description = "Search PubChem for a chemical compound by name, get CID and structure"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "pubchem_get_properties"
+description = "Get molecular properties (formula, weight, IUPAC name) for a compound by CID"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+# ─── Health Canada (2) ─────────────────────────────────────────────────────────
+
+[[tools]]
+name = "health_canada_search_products"
+description = "Search Health Canada Drug Product Database by brand name or active ingredient"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "health_canada_get_product"
+description = "Get detailed Canadian drug product information by DIN"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+# ─── ClinicalTrials.gov (2) ───────────────────────────────────────────────────
+
+[[tools]]
+name = "clinicaltrials_search"
+description = "Search ClinicalTrials.gov for studies by drug, condition, or keyword"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "clinicaltrials_get_study"
+description = "Get detailed study information by NCT ID"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+# ─── EMA (1) ──────────────────────────────────────────────────────────────────
+
+[[tools]]
+name = "ema_search_medicines"
+description = "Search EU-authorized medicines from EMA data (name, ATC, therapeutic area, status)"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+# ─── MHRA (1) ─────────────────────────────────────────────────────────────────
+
+[[tools]]
+name = "mhra_search_safety_updates"
+description = "Search UK MHRA Drug Safety Updates"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+# ─── Cross-backend (2) ────────────────────────────────────────────────────────
+
+[[tools]]
+name = "search_drug_global"
+description = "Federated drug search across multiple registries (US, EU, UK, Canada) by name"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "get_registration_status"
+description = "Check registration/approval status of a drug across available regions"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
