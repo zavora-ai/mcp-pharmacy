@@ -2,7 +2,7 @@
 
 [package]
 name = "mcp-pharmacy"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2024"
 description = "Global drug reference and regulatory intelligence MCP server — OpenFDA, DailyMed, RxNorm, PubChem, Health Canada, EMA, ClinicalTrials.gov"
 license = "Apache-2.0"
