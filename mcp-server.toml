@@ -1,16 +1,14 @@
 server_id = "mcp_pharmacy"
 display_name = "Pharmacy"
-version = "1.0.1"
+version = "1.1.0"
 domain = "pharmacy"
-sdk_version = "0.1.0"
+sdk_version = "0.2.0"
 risk_level = "low"
 writes_allowed = "none"
 transports = ["stdio"]
 credentials = []
 governance_gates = []
 environments = ["development", "staging", "production"]
-
-# ─── OpenFDA (4) ──────────────────────────────────────────────────────────────
 
 [[tools]]
 name = "openfda_search_labels"
@@ -40,8 +38,6 @@ risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
-# ─── DailyMed (2) ─────────────────────────────────────────────────────────────
-
 [[tools]]
 name = "dailymed_search_labels"
 description = "Search DailyMed structured product labels (SPL) by drug name"
@@ -55,8 +51,6 @@ description = "Retrieve full SPL XML label by setid for detailed section extract
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
-
-# ─── RxNorm (3) ───────────────────────────────────────────────────────────────
 
 [[tools]]
 name = "rxnorm_normalize"
@@ -79,8 +73,6 @@ risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
-# ─── PubChem (2) ──────────────────────────────────────────────────────────────
-
 [[tools]]
 name = "pubchem_search_compound"
 description = "Search PubChem for a chemical compound by name, get CID and structure"
@@ -94,8 +86,6 @@ description = "Get molecular properties (formula, weight, IUPAC name) for a comp
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
-
-# ─── Health Canada (2) ─────────────────────────────────────────────────────────
 
 [[tools]]
 name = "health_canada_search_products"
@@ -111,8 +101,6 @@ risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
-# ─── ClinicalTrials.gov (2) ───────────────────────────────────────────────────
-
 [[tools]]
 name = "clinicaltrials_search"
 description = "Search ClinicalTrials.gov for studies by drug, condition, or keyword"
@@ -127,8 +115,6 @@ risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
-# ─── EMA (1) ──────────────────────────────────────────────────────────────────
-
 [[tools]]
 name = "ema_search_medicines"
 description = "Search EU-authorized medicines from EMA data (name, ATC, therapeutic area, status)"
@@ -136,16 +122,12 @@ risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
-# ─── MHRA (1) ─────────────────────────────────────────────────────────────────
-
 [[tools]]
 name = "mhra_search_safety_updates"
 description = "Search UK MHRA Drug Safety Updates"
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
-
-# ─── Cross-backend (2) ────────────────────────────────────────────────────────
 
 [[tools]]
 name = "search_drug_global"

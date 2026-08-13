@@ -4,6 +4,7 @@ use serde_json::Value;
 
 use crate::types::ClinicalTrial;
 
+#[derive(Clone)]
 pub struct ClinicalTrialsGov {
     client: Client,
 }

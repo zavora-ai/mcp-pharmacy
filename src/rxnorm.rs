@@ -4,6 +4,7 @@ use serde_json::Value;
 
 use crate::types::AtcClass;
 
+#[derive(Clone)]
 pub struct RxNorm {
     client: Client,
 }
