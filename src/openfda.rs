@@ -4,6 +4,7 @@ use serde_json::Value;
 
 use crate::types::{AdverseEvent, DrugLabel, DrugProduct, DrugRecall};
 
+#[derive(Clone)]
 pub struct OpenFda {
     client: Client,
     api_key: Option<String>,

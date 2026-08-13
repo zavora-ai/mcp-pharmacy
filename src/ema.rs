@@ -5,6 +5,7 @@ use crate::types::DrugProduct;
 /// EMA backend uses a pre-cached JSON file derived from the EMA XLSX download.
 /// On first use, it downloads and parses the XLSX into a local JSON cache.
 /// For the MCP server, we use a simplified approach: search the cached data.
+#[derive(Clone)]
 pub struct Ema {
     medicines: Vec<EmaMedicine>,
 }

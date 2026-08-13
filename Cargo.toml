@@ -4,6 +4,7 @@
 name = "mcp-pharmacy"
 version = "1.0.1"
 edition = "2024"
+rust-version = "1.94.1"
 description = "Global drug reference and regulatory intelligence MCP server — OpenFDA, DailyMed, RxNorm, PubChem, Health Canada, EMA, ClinicalTrials.gov"
 license = "Apache-2.0"
 repository = "https://github.com/zavora-ai/mcp-pharmacy"
@@ -22,7 +23,7 @@ ema = []
 all-backends = ["openfda", "dailymed", "rxnorm", "pubchem", "health-canada", "clinicaltrials", "ema"]
 
 [dependencies]
-adk-mcp-sdk = "0.1"
+adk-mcp-sdk = { version = "0.2.0", git = "https://github.com/zavora-ai/adk-mcp-sdk.git", rev = "4dac4301441a8a51a042fd66cc1798f0ec3e3f55" }
 rmcp = { version = "3.1.2", features = ["server", "transport-io", "macros"] }
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1", features = ["derive"] }

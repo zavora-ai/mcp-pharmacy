@@ -4,6 +4,7 @@ use serde_json::Value;
 
 use crate::types::CompoundInfo;
 
+#[derive(Clone)]
 pub struct PubChem {
     client: Client,
 }

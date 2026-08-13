@@ -69,6 +69,7 @@ pub struct GlobalSearchInput {
     pub query: String,
 }
 
+#[derive(Clone)]
 pub struct PharmacyServer {
     pub openfda: OpenFda,
     pub dailymed: DailyMed,
@@ -79,7 +80,7 @@ pub struct PharmacyServer {
     pub ema: Ema,
 }
 
-#[tool_router(server_handler)]
+#[tool_router]
 impl PharmacyServer {
     // --- OpenFDA ---
 
@@ -331,4 +332,11 @@ async fn search_mhra(query: &str, limit: u32) -> anyhow::Result<Vec<SafetyUpdate
         date: r["public_timestamp"].as_str().map(String::from),
         description: r["description"].as_str().map(String::from),
     }).collect())
+}
+
+adk_mcp_sdk::mcp_2026_server! {
+    server: PharmacyServer,
+    task_tools: [],
+    approval_tools: [],
+    cache_ttl_ms: 60_000,
 }
