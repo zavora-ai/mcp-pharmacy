@@ -2,7 +2,7 @@
 
 [package]
 name = "mcp-pharmacy"
-version = "1.0.1"
+version = "1.1.0"
 edition = "2024"
 rust-version = "1.94.1"
 description = "Global drug reference and regulatory intelligence MCP server — OpenFDA, DailyMed, RxNorm, PubChem, Health Canada, EMA, ClinicalTrials.gov"
